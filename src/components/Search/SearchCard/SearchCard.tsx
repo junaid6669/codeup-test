@@ -5,6 +5,10 @@ const SearchCardStyle = styled.div`
   padding: 24px;
   gap: 24px;
   border-radius: 16px;
+  > p {
+    display: flex;
+    font-weight: bold;
+  }
 `;
 
 const Card = styled.div`
@@ -54,6 +58,8 @@ interface SearchCardProps {
 const SearchCard: FC<SearchCardProps> = ({ foundElements }) => {
   return (
     <SearchCardStyle>
+      <p>{foundElements.length} Suggestions</p>
+
       {foundElements.map((ele) => {
         return (
           <Card>
